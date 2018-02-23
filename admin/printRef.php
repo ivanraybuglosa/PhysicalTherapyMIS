@@ -13,22 +13,22 @@
     <!-- Favicons-->
     <link rel="icon" href="images/logo.png" sizes="40x40">
 
-    <!-- CORE CSS-->    
+    <!-- CORE CSS-->
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="all">
     <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
 </head>
 
 <body>
-<?php 
+<?php
 include("config.php");
-	$id = $_GET['id']; 
+	$id = $_GET['id'];
     $result = mysqli_query($mysqli, "SELECT * FROM referral WHERE RefID = $id");
-     while ($res = mysqli_fetch_array($result)) { 
+     while ($res = mysqli_fetch_array($result)) {
             $patientID = $res['PatientID'];
-                                                  
+
   $result1 = mysqli_query($mysqli, "SELECT * FROM patient WHERE PatientID = '$patientID'");
-      while ($res1 = mysqli_fetch_array($result1)) { 
-          $PName =  $res1['PatientName']; 
+      while ($res1 = mysqli_fetch_array($result1)) {
+          $PName =  $res1['PatientName'];
 
         $Doc =  $res['RefDoctor'];
         $Hopst = $res['RefHospital'];
@@ -69,7 +69,7 @@ include("config.php");
             <br>
             <div id="print">
                 <div class="col s12 m12 l6">
-                  <h4 class="header">Referral Form</h4>
+                  <h4 class="header"><center>Outgoing Patient Referral</center></h4>
                   <ul id="projects-collection" class="collection">
                     <li class="collection-item avatar">
                       <i class="mdi-action-assignment-ind circle light-blue"></i>
@@ -91,7 +91,7 @@ include("config.php");
                           <p class="collections-content"><?php echo $HopstAdd; ?></p>
                         </div>
                       </div>
-                        
+
                     </li>
                     <li class="collection-item">
                       <div class="row">
@@ -131,7 +131,7 @@ include("config.php");
          <script type="text/javascript">
          window.onload = function() { window.print(); window.close();}
         </script>
-    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>    
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
     <!--materialize js-->
     <script type="text/javascript" src="js/materialize.js"></script>
     <!--prism-->
@@ -139,11 +139,11 @@ include("config.php");
     <!--scrollbar-->
     <script type="text/javascript" src="js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
     <!-- chartist -->
-    <script type="text/javascript" src="js/plugins/chartist-js/chartist.min.js"></script>   
-    
+    <script type="text/javascript" src="js/plugins/chartist-js/chartist.min.js"></script>
+
     <!--plugins.js - Some Specific JS codes for Plugin Settings-->
     <script type="text/javascript" src="js/plugins.js"></script>
-    
+
 </body>
 
 </html>

@@ -37,10 +37,9 @@
                                     <div class="input-field col s3" style="margin-top:-14px;">
                                       <label for="input-select">Report Type</label>
                                         <select name="tableReport">
-                                            <option value="" disabled selected>Choose your option</option>
                                             <option value="evaluation">Evaluation</option>
                                             <option value="planofcare">PT Notes</option>
-                                            <option value="referral">Referral</option>
+                                            <option value="referral">Outgoing Referral</option>
                                         </select>
                                     </div>
                                 </div>
@@ -75,37 +74,40 @@
                                             <tr>
                                                 <th>Patient Name</th>
                                                 <th>Physical Therapist</th>
-                                                <th>Session Qty</th>
                                                 <th>Chief Complaint</th>
                                                 <th>History Illnesses</th>
                                                 <th>Evaluation Date</th>
-                                                <th>Action</th>
+                                                <th>Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                        $result = mysqli_query($mysqli, "SELECT * FROM evaluation WHERE Eval_Date BETWEEN '$start' AND '$end'");
-                                            while ($res1 = mysqli_fetch_array($result)) {
-                                                $P_id = $res1['PatientID'];
+                                        $result = mysqli_query($mysqli, "SELECT * FROM evaluation INNER JOIN patient ON evaluation.PatientID = patient.PatientID WHERE Eval_Date BETWEEN '$start' AND '$end'");
+                                            while ($res9 = mysqli_fetch_array($result)) {
+                                                $P_id = $res9['PatientID'];
+                                                $PT = $res9['PT_ID'];
                                              ?>
 
+                                             <?php
+                                         $result = mysqli_query($mysqli, "SELECT * FROM evaluation INNER JOIN pt ON evaluation.PT_ID = pt.PT_ID WHERE evaluation.PT_ID ='$PT'");
+                                             while ($res8 = mysqli_fetch_array($result)) {
+                                                 $eval = $res8['EvalID'];
+                                              ?>
+
                                             <tr>
-                                                <?php $result1 = mysqli_query($mysqli, "SELECT * FROM patient WHERE PatientID = $P_id");
-                                                while ($res2 = mysqli_fetch_array($result1)) {
-                                                    ?>
-                                                <td><?php echo $res2['PatientName']; ?></td>
-                                                <?php } ?>
-                                                <td><?php echo $res1['EvalPT']; ?></td>
-                                                <td><?php echo $res1['EvalSessionQty']; ?></td>
-                                                <td><?php echo $res1['EvalChiefComplaint']; ?></td>
-                                                <td><?php echo $res1['EvalHistoryIllness']; ?></td>
-                                                <td><?php echo $res1['Eval_Date']; ?></td>
-                                                <td><a href="printEval.php?id=<?php echo $res1['EvalID']; ?>"  class="btn green waves-effect waves-light" target="_blank">Print</a></td>
+                                                <td><?php echo $res9['PatientName']; ?></td>
+                                                <td><?php echo $res8['PT_Name']; ?></td>
+                                                <td><?php echo $res9['EvalChiefComplaint']; ?></td>
+                                                <td><?php echo $res9['EvalHistoryIllness']; ?></td>
+                                                <td><?php echo $res9['Eval_Date']; ?></td>
+                                                <td><a href="printEval.php?id=<?php echo $res9['EvalID'] ?>" class="btn green waves-effect waves-light " target="_blank">Print</a></td>
+                                              <?php } }?>
                                             </tr>
-                                            <?php } ?>
+
                                                         </table>
                                                     </div>
                                                 </div>
+
                                         </div>
                                     </div>
 
@@ -170,12 +172,12 @@
                                                 <th>Physical Therapist</th>
                                                 <th>Date</th>
                                                 <th>Treatment</th>
-                                                <th>Status</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                        $result = mysqli_query($mysqli, "SELECT * FROM planofcare WHERE POCSessionDate BETWEEN '$start' AND '$end'");
+                                        $result = mysqli_query($mysqli, "SELECT * FROM planofcare INNER JOIN pt ON planofcare.PT_ID = pt.PT_ID WHERE POCSessionDate BETWEEN '$start' AND '$end'");
                                         while ($res1 = mysqli_fetch_array($result)) {
                                                 $P_id = $res1['PatientID'];
                                              ?>
@@ -185,10 +187,10 @@
                                                     ?>
                                                 <td><?php echo $res2['PatientName']; ?></td>
                                                 <?php } ?>
-                                                <td><?php echo $res1['PT_ID']; ?></td>
+                                                <td><?php echo $res1['PT_Name']; ?></td>
                                                 <td><?php echo $res1['POCSessionDate']; ?></td>
                                                 <td><?php echo $res1['POCTreatment']; ?></td>
-                                                <td><?php echo $res1['POCStatus']; ?></td>
+                                                <td><a href="printNotes.php?id=<?php echo $res1['POCID']; ?>" class="btn green waves-effect waves-light " target="_blank">Print</a></td>
                                             </tr>
                                             <?php } ?>
                                                         </table>

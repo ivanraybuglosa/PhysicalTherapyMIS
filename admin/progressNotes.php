@@ -4,7 +4,7 @@
 <section class="section">
   <div class="container">
             <div class="card-panel">
-              <h4 class="header2">Statement of Account</h4>
+              <h4 class="header2">Physical Therapy Progress Notes</h4>
               <div class="divider"></div>
                 <div class="container">
                     <div class="section">
@@ -17,25 +17,27 @@
                               <thead>
                                   <tr>
                                       <th>Client Name</th>
-                                      <th>Physical Therapy</th>
+                                      <th>Physical Therapist</th>
                                       <th>Date</th>
                                       <th>Amount</th>
+                                      <th>Actions</th>
 
                                   </tr>
                               </thead>
                               <tbody>
 
-                              <?php include_once("config.php"); 
+                              <?php include_once("config.php");
 
 
                           $result = mysqli_query($mysqli, "SELECT * FROM planofcare INNER JOIN patient ON planofcare.PatientID = patient.PatientID INNER JOIN pt ON planofcare.PT_ID = pt.PT_ID ORDER BY POCID DESC");
                           while ($res = mysqli_fetch_array($result)) {
-                          $patientID = $res['PatientID'];
+                          $patientID = $res['POCID'];
                           ?><tr>
                               <td><?php echo $res['PatientName']; ?></td>
                               <td><?php echo $res['PT_Name']; ?></td>
                               <td><?php echo $res['POCSessionDate']; ?></td>
                               <td><?php echo $res['POCTreatmentBill']; ?></td>
+                              <td><a href="printNotes.php?id=<?php echo $res['POCID']; ?>" class="btn green waves-effect waves-light " target="_blank">Print</a></td>
                               </tr>
 
                           <?php  } ?>

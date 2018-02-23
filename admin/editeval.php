@@ -99,12 +99,12 @@
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s12">
-                                                <textarea name="Assessment" class="materialize-textarea"  required style="color: black;"><?php echo $erow['ROM']; ?></textarea>
-                                                <label for="Assessment" style="color: black;">Range of Motion</label>
+                                                <textarea name="ROM" class="materialize-textarea"  required style="color: black;"><?php echo $erow['ROM']; ?></textarea>
+                                                <label for="ROM" style="color: black;">Range of Motion</label>
                                             </div>
                                             <div class="input-field col s12">
-                                                <textarea name="Plan" class="materialize-textarea" required  style="color: black;"><?php echo $erow['MMT']; ?></textarea>
-                                                <label for="Plan" style="color: black;">Manual Muscle Test</label>
+                                                <textarea name="MMT" class="materialize-textarea" required  style="color: black;"><?php echo $erow['MMT']; ?></textarea>
+                                                <label for="MMT" style="color: black;">Manual Muscle Test</label>
                                         </div>
                                         <div class="row">
                                             <div class="input-field col s12">

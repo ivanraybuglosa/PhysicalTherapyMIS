@@ -29,7 +29,7 @@
 
 
   <!-- CORE CSS-->
-  
+
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
   <link href="css/page-center.css" type="text/css" rel="stylesheet" media="screen,projection">
@@ -37,13 +37,13 @@
   <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
   <link href="css/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
   <link href="js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
-  
+
 </head>
 
-<body class="light-blue">
+<body background="background.jpg" style="background-position: center center,center center">
   <!-- Start Page Loading -->
   <div id="loader-wrapper">
-      <div id="loader"></div>        
+      <div id="loader"></div>
       <div class="loader-section section-left"></div>
       <div class="loader-section section-right"></div>
   </div>
@@ -72,7 +72,7 @@ $password=$_POST['password'];
       $_SESSION['username']=$user;
       $_SESSION['userType']=$type;
       echo "<script>location.href='pt/patientRegistration.php';</script>";
-    } 
+    }
   } else{
 ?>
 <div class="alert alert-danger alert-dismissible" role="alert">
@@ -83,9 +83,9 @@ $password=$_POST['password'];
 }
 ?>
 
+  <div id="login-page">
 
-  <div id="login-page" class="row">
-    <div class="col s12 z-depth-4 card-panel">
+    <div class="card-panel">
       <form class="login-form" method="post" >
         <div class="row">
           <div class="input-field col s12 center">
@@ -116,6 +116,7 @@ $password=$_POST['password'];
       </form>
     </div>
   </div>
+
 
 
 

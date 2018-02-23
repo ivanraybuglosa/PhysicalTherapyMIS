@@ -12,6 +12,8 @@ if(isset($_POST['Submit'])) {
 	$Skin = mysqli_real_escape_string($mysqli, $_POST['Skin']);
 	$EvalAssessment = mysqli_real_escape_string($mysqli, $_POST['Assessment']);
 	$EvalPlan = mysqli_real_escape_string($mysqli, $_POST['Plan']);
+	$ROM = mysqli_real_escape_string($mysqli, $_POST['ROM']);
+	$MMT = mysqli_real_escape_string($mysqli, $_POST['MMT']);
 
 
 
@@ -24,6 +26,8 @@ if(isset($_POST['Submit'])) {
 			EvalChiefComplaint = '$caseDescription',
 			EvalEdema = '$Edema',
 			EvalSkin = '$Skin',
+			ROM = '$ROM',
+			MMT = '$MMT',
 			EvalPosture ='$Posture',
 			EvalPlan = '$EvalPlan',
 			EvalAssessment = '$EvalAssessment'

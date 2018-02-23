@@ -50,7 +50,7 @@
         <div class="navbar-fixed">
             <nav class="cyan">
                 <div class="nav-wrapper">
-                     <h1 class="logo-wrapper"><a href="index.php" class="brand-logo darken-1"><img src="images/logo.png" style="width:65px;height:20;"" alt="PTMIS-logo"> </h1></a><a href="index.php"> <span class="black-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BPTRCC - PHYSICAL THERAPY MANAGMENT INFORMATION SYSTEM</span></a>
+                     <h1 class="logo-wrapper"><a href="index.php" class="brand-logo darken-1"><img src="images/logo.png" style="width:65px;height:20;"" alt="PTMIS-logo"> </h1></a><a href="index.php"> <span class="black-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BPTRCC - PHYSICAL THERAPY MANAGEMENT INFORMATION SYSTEM</span></a>
 
                     <ul class="right hide-on-med-and-down">
                         <li><a href="../logout.php" class="waves-effect waves-block waves-light"><i class="mdi-action-settings-power"></i></a>
@@ -113,18 +113,17 @@
                             <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-editor-insert-chart"></i> Reports<i class="mdi-hardware-keyboard-arrow-down right"></i></a>
                                 <div class="collapsible-body">
                                     <ul>
-                                        <li><a href="dateReport.php">Patient Record</a>
+                                        <li><a href="dateReport.php">Patient Transaction</a>
                                         </li>
-                                        <li><a href="progressNotes.php">Progress Notes Report</a>
+                                        <li><a href="statementReport.php">Patient Bill</a>
                                         </li>
-                                         <li><a href="#" onclick="openCases()">Cases</a>
+                                         <li><a href="#" onclick="openCases()">Trend - Cases</a>
                                         </li>
-                                        <li><a href="HistoryIllness.php">History Illness</a>
+                                        <li><a href="HistoryIllness.php">Trend - History Illness</a>
                                         </li>
-                                        <li><a href="#" onclick="openPatient()">Patient</a>
+                                        <li><a href="#" onclick="openPatient()">Trend - Patient</a>
                                         </li>
-                                        <li><a href="statementReport.php">Statement of Account</a>
-                                        </li>
+
                                     </ul>
                                 </div>
                             </li>

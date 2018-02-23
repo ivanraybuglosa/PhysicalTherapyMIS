@@ -21,7 +21,7 @@
 
 
                 <div class="card-panel">
-                    <div class="container">
+                    <div class="container-fluid">
                         <div class="section">
                             <div id="table-datatables">
                                 <div class="row">

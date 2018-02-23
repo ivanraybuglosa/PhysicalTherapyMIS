@@ -62,8 +62,8 @@ if(isset($_POST['submit'])) {
 	$remarks = mysqli_real_escape_string($mysqli, $_POST['OtherOcculars']);
 	$date = date('Y-m-d');
 		mysqli_query($mysqli,
-			"INSERT INTO evaluation (PatientID, PT_ID, EvalChiefComplaint, EvalHistoryIllness, EvalEdema,EvalPosture,EvalPlan,EvalSkin,EvalAssessment,MMT,ROM,Remarks)
-			VALUES('$PatientID','$PTName','$caseDescription','$PatientIllness','$Edema','$Posture','$Plan','$Skin','$Assessment','$MMT','$ROM','$remarks')");
+			"INSERT INTO evaluation (PatientID, PT_ID, EvalChiefComplaint, EvalHistoryIllness, EvalEdema,EvalPosture,EvalPlan,EvalSkin,EvalAssessment,MMT,ROM,Remarks,Eval_Date)
+			VALUES('$PatientID','$PTName','$caseDescription','$PatientIllness','$Edema','$Posture','$Plan','$Skin','$Assessment','$MMT','$ROM','$remarks','$date')");
 
 				 //display success message
 		 		echo "<script>alert('Patient Record Added Successfully');window.location.href='ManageEvaluation.php';</script>";

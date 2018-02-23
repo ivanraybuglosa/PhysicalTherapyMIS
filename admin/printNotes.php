@@ -21,8 +21,8 @@
 <body>
 <?php
 include("config.php");
-  $id = $_GET['id'];
-    $result = mysqli_query($mysqli, "SELECT * FROM evaluation INNER JOIN pt ON evaluation.PT_ID = pt.PT_ID WHERE EvalID = $id");
+	$id = $_GET['id'];
+    $result = mysqli_query($mysqli, "SELECT * FROM planofcare INNER JOIN pt ON planofcare.PT_ID = pt.PT_ID WHERE POCID = $id");
      while ($res = mysqli_fetch_array($result)) {
             $patientID = $res['PatientID'];
 
@@ -30,16 +30,19 @@ include("config.php");
       while ($res1 = mysqli_fetch_array($result1)) {
           $PName =  $res1['PatientName'];
 
-        $EvalPT =  $res['PT_Name'];
-        $EvalChiefComplaint =   $res['EvalChiefComplaint'];
-        $EvalHistoryIllness = $res['EvalHistoryIllness'];
-        $EvalEdema = $res['EvalEdema'];
-        $EvalPosture =   $res['EvalPosture'];
-        $Others = $res['Others'];
-        $EvalSkin = $res['EvalSkin'];
-        $EvalAssessment = $res['EvalAssessment'];
-        $EvalPlan = $res['EvalPlan'];
-        $Eval_Date = $res['Eval_Date'];
+        $PT_Name =  $res['PT_Name'];
+        $SessionDate = $res['POCSessionDate'];
+        $Treatment =   $res['POCTreatment'];
+        $Bloodpressure = $res['POCBloodPressure'];
+        $HeartRate = $res['POCHeartRate'];
+        $RespiratoryRate = $res['POCRespiratoryRate'];
+        $Pulse = $res['POCPulse'];
+        $Subjective = $res['POC_Subjective'];
+        $Assessment = $res['POCAssessment'];
+        $Plan = $res['POCPlan'];
+        $NextSchedDate = $res['POCNextSchedDate'];
+        $Time = $res['POCTime'];
+        $Bill = $res['POCTreatmentBill'];
     }}
 ?>
 
@@ -72,7 +75,7 @@ include("config.php");
             <br>
             <div id="print">
                 <div class="col s12 m12 l6">
-                  <h4 class="header"><center>Patient Evaluation</center></h4>
+                  <h4 class="header"><center>Physical Theraphy Progress Notes</center></h4>
                   <ul id="projects-collection" class="collection">
                     <li class="collection-item avatar">
                       <i class="mdi-action-assignment-ind circle light-blue"></i>
@@ -83,15 +86,15 @@ include("config.php");
                       <div class="row">
                         <div class="col s4">
                           <p class="collections-title strong">Physical Therapist</p>
-                          <p class="collections-content"><?php echo $EvalPT; ?></p>
+                          <p class="collections-content"><?php echo $PT_Name; ?></p>
                         </div>
                         <div class="col s4">
-                          <p class="collections-title strong">Complaint</p>
-                          <p class="collections-content"><?php echo $EvalChiefComplaint; ?></p>
+                          <p class="collections-title strong">Session Date</p>
+                          <p class="collections-content"><?php echo $SessionDate; ?></p>
                         </div>
                         <div class="col s4">
-                          <p class="collections-title strong">History Patient Illnesses</p>
-                          <p class="collections-content"><?php echo $EvalHistoryIllness; ?></p>
+                          <p class="collections-title strong">Treatment</p>
+                          <p class="collections-content"><?php echo $Treatment; ?></p>
                         </div>
                       </div>
 
@@ -99,32 +102,40 @@ include("config.php");
                     <li class="collection-item">
                       <div class="row">
                         <div class="col s3">
-                          <p class="collections-title strong">Edema</p>
-                          <p class="collections-content"><?php echo $EvalEdema; ?></p>
+                          <p class="collections-title strong">Blood Pressure</p>
+                          <p class="collections-content"><?php echo $Bloodpressure; ?></p>
                         </div>
                         <div class="col s3">
-                          <p class="collections-title strong">Posture</p>
-                          <p class="collections-content"><?php echo $EvalPosture; ?></p>
+                          <p class="collections-title strong">Heart Rate</p>
+                          <p class="collections-content"><?php echo $HeartRate; ?></p>
                         </div>
                         <div class="col s3">
-                          <p class="collections-title strong">Skin</p>
-                          <p class="collections-content"><?php echo $EvalSkin; ?></p>
+                          <p class="collections-title strong">Respiratory Rate</p>
+                          <p class="collections-content"><?php echo $RespiratoryRate; ?></p>
                         </div>
-                      <div class="col s3">
-                          <p class="collections-title strong">Others</p>
-                          <p class="collections-content"><?php echo $Others; ?></p>
+                        <div class="col s3">
+                          <p class="collections-title strong">Pulse</p>
+                          <p class="collections-content"><?php echo $Pulse; ?></p>
                         </div>
                       </div>
                     </li>
                     <li class="collection-item">
                       <div class="row">
-                        <div class="col s6">
-                          <p class="collections-title strong">Assessment</p>
-                          <p class="collections-content"><?php echo $EvalAssessment; ?></p>
+                        <div class="col s3">
+                          <p class="collections-title strong">Subjective</p>
+                          <p class="collections-content"><?php echo $Subjective; ?></p>
                         </div>
-                        <div class="col s6">
+                        <div class="col s3">
+                          <p class="collections-title strong">Assessment</p>
+                          <p class="collections-content"><?php echo $Assessment; ?></p>
+                        </div>
+                        <div class="col s3">
                           <p class="collections-title strong">Plan</p>
-                          <p class="collections-content"><?php echo $EvalPlan; ?></p>
+                          <p class="collections-content"><?php echo $Plan; ?></p>
+                        </div>
+                        <div class="col s3">
+                          <p class="collections-title strong">Treatment Bill</p>
+                          <p class="collections-content"><?php echo $Bill; ?></p>
                         </div>
                       </div>
                     </li>
@@ -144,10 +155,9 @@ include("config.php");
 
       </section>
 
-          <!-- jQuery Library -->
-          <script type="text/javascript">
- window.onload = function() { window.print(); window.close();}
-</script>
+         <script type="text/javascript">
+         window.onload = function() { window.print(); window.close();}
+        </script>
     <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
     <!--materialize js-->
     <script type="text/javascript" src="js/materialize.js"></script>
