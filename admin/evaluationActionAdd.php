@@ -1,9 +1,8 @@
 <?php
 //including the database connection file
 include_once("config.php");
-
 if(isset($_POST['submit'])) {
-	$PatientID = mysqli_real_escape_string($mysqli, $_POST['PatientID']);
+	$PatientID = mysqli_real_escape_string($mysqli,$_POST['PatientID']);
 	$PTName = mysqli_real_escape_string($mysqli, $_POST['PTName']);
 	$caseDescription = mysqli_real_escape_string($mysqli, $_POST['ChiefComplaint']);
 	if(isset($_POST['PatientIllness'])){
@@ -63,8 +62,8 @@ if(isset($_POST['submit'])) {
 	$remarks = mysqli_real_escape_string($mysqli, $_POST['OtherOcculars']);
 	$date = date('Y-m-d');
 		mysqli_query($mysqli,
-			"INSERT INTO evaluation (PatientID, EvalPT, EvalChiefComplaint, EvalHistoryIllness, EvalEdema,EvalPosture,EvalSkin,EvalAssessment,MMT,ROM,Remarks)
-			VALUES('$PatientID','$PTName','$caseDescription','$PatientIllness','$Edema','$Posture','$Skin','$Assessment','$MMT','$ROM','$remarks')");
+			"INSERT INTO evaluation (PatientID, PT_ID, EvalChiefComplaint, EvalHistoryIllness, EvalEdema,EvalPosture,EvalPlan,EvalSkin,EvalAssessment,MMT,ROM,Remarks)
+			VALUES('$PatientID','$PTName','$caseDescription','$PatientIllness','$Edema','$Posture','$Plan','$Skin','$Assessment','$MMT','$ROM','$remarks')");
 
 				 //display success message
 		 		echo "<script>alert('Patient Record Added Successfully');window.location.href='ManageEvaluation.php';</script>";

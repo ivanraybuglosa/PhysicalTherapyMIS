@@ -32,6 +32,7 @@
                                                         <th>Physical Therapist</th>
                                                         <th>Date Scheduled</th>
                                                         <th>Treatment</th>
+                                                        <th>Bill</th>
                                                         <th>Update</th>
                                                     </tr>
                                                 </thead>
@@ -48,6 +49,7 @@
                                                     <td><?php echo $res['PT_Name']; ?></td>
                                                     <td><?php echo $res['POCSessionDate']; ?></td>
                                                     <td><?php echo $res['POCTreatment']; ?></td>
+                                                    <td><?php echo $res['POCTreatmentBill']; ?></td>
 
 
                                                     <td><a class="waves-effect waves-light modal-trigger light-blue btn" href="editPOC.php?id=<?php echo $res['POCID']; ?>" >Update</a>

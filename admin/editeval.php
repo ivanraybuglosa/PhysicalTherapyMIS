@@ -26,9 +26,10 @@
                 <div class="card-panel">
                     <h4 class="header2">Evaluation Form</h4>
                         <div class="divider"></div>
-                            <form class="col s12" action="evaluationActionAdd.php" method="post" >
+                            <form class="col s12" action="evaluationActionEdit.php" method="post" >
                                 <div class="row">
                                     <div class="input-field col s6">
+                                        <input type="hidden" name="EvalID" value=<?php echo $id = $_GET['id'];?>>
                                         <input type="hidden" name="PatientID" value="<?php echo $erow['PatientID']; ?>">
                                         <input id="patientName" name="patientName" value="<?php echo $erow['PatientName']; ?>" type="text"   style="color: black;" disabled>
                                         <div id="patientList"></div>
@@ -62,12 +63,12 @@
                                         <div class="body">
                                             <div class="row">
                                                 <div class="input-field col s6">
-                                                    <textarea id="caseDescription" class="materialize-textarea"  style="color: black;"><?php echo $erow['EvalChiefComplaint']; ?></textarea>
+                                                    <textarea id="caseDescription" name="caseDescription" class="materialize-textarea"  style="color: black;"><?php echo $erow['EvalChiefComplaint']; ?></textarea>
                                                     <label for="caseDescription" style="color: black;">Chief Complaint</label>
                                                 </div>
                                                 <div class="input-field col s6">
-                                                    <textarea id="caseDescription" name="PatientIllness" class="materialize-textarea"  disabled style="color: black;"><?php echo $erow['EvalHistoryIllness']; ?></textarea>
-                                                    <label for="caseDescription" style="color: black;">History Patient Illness</label>
+                                                    <textarea id="historyPatientIllness" class="materialize-textarea"  disabled style="color: black;"><?php echo $erow['EvalHistoryIllness']; ?></textarea>
+                                                    <label for="historyPatientIllness" style="color: black;">History Patient Illness</label>
                                                 </div>
                                         </div>
                                 </div>
@@ -92,7 +93,7 @@
                                                 <label for="Skin" style="color: black;">Skin</label>
                                             </div>
                                             <div class="input-field col s6">
-                                                <textarea name="Skin" class="materialize-textarea" required  style="color: black;"><?php echo $erow['Others']; ?></textarea>
+                                                <textarea name="Skin" class="materialize-textarea" required  style="color: black;"><?php echo $erow['Remarks']; ?></textarea>
                                                 <label for="Skin" style="color: black;">Others</label>
                                             </div>
                                         </div>

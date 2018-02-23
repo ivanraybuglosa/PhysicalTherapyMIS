@@ -107,8 +107,6 @@
                                         </li>
                                         <li><a href="ManagePlanCare.php">PT Notes</a>
                                         </li>
-                                        <li><a href="Transaction.php">Billing</a>
-                                        </li>
                                     </ul>
                                 </div>
                             </li>

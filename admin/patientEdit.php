@@ -50,6 +50,60 @@
         </div>
     </div>
 
+    <div class="card-panel">
+      <h4 class="header2">Statement of Account</h4>
+      <div class="divider"></div>
+        <div class="container">
+            <div class="section">
+                <div class="row">
+                  <div class="body">
+                  <div id="table-datatables">
+                          <div class="row">
+                              <div class="col s12 m8 l12">
+                                  <table id="data-table-simple" class="responsive-table display" cellspacing="0">
+                      <thead>
+                          <tr>
+                              <th>Client Name</th>
+                              <th>Physical Therapy</th>
+                              <th>Date</th>
+                              <th>Amount</th>
+
+                          </tr>
+                      </thead>
+                      <tbody>
+
+                      <?php
+                      $patient_ID = $_GET['patient_id'];
+
+                  $result = mysqli_query($mysqli, "SELECT * FROM planofcare INNER JOIN patient ON planofcare.PatientID = patient.PatientID INNER JOIN pt ON planofcare.PT_ID = pt.PT_ID WHERE planofcare.PatientID = '$patient_ID'");
+                  while ($res = mysqli_fetch_array($result)) {
+                  $patientID = $res['PatientID'];
+                  ?><tr>
+                      <td><?php echo $res['PatientName']; ?></td>
+                      <td><?php echo $res['PT_Name']; ?></td>
+                      <td><?php echo $res['POCSessionDate']; ?></td>
+                      <td><?php echo $res['POCTreatmentBill']; ?></td>
+                      </tr>
+
+                  <?php  } ?>
+
+
+
+
+
+
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+  </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
                  <div class="card-panel">
                     <h4 class="header2">UPDATE PATIENT RECORD</h4>
                         <div class="divider"></div>
@@ -243,6 +297,9 @@
     <!--scrollbar-->
     <script type="text/javascript" src="js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
 
+    <!-- data-tables -->
+    <script type="text/javascript" src="js/plugins/data-tables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/plugins/data-tables/data-tables-script.js"></script>
     <!-- chartist -->
     <script type="text/javascript" src="js/plugins/chartist-js/chartist.min.js"></script>
 

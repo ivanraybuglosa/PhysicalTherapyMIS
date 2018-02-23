@@ -29,7 +29,7 @@
                             <form class="col s12" action="evaluationActionAdd.php" method="post" name="add_name" id="add_name">
                                 <div class="row">
                                     <div class="input-field col s6">
-                                        <input type="hidden" name="PatientID" value="<?php echo $erow['PatientID']; ?>">
+                                        <input type="hidden" name="PatientID" value="<?php echo $patientID = $_GET['Patient_ID']; ?>">
                                         <input id="patientName" name="patientName" value="<?php echo $erow['PatientName']; ?>" type="text" disabled  style="color: black;">
                                         <div id="patientList"></div>
                                         <label for="patientName" style="color: black;">Patient Name</label>
@@ -38,7 +38,7 @@
                                         <select id="PTName" name="PTName">
                                             <option value="" disabled selected>Choose Physical Therapist</option>
                                             <?php include("config.php");
-                                                    $result = mysqli_query($mysqli, "SELECT * FROM PT ORDER BY PT_ID DESC");
+                                                    $result = mysqli_query($mysqli, "SELECT * FROM pt ORDER BY PT_ID DESC");
                                                     while ($res = mysqli_fetch_array($result)) { ?>
 
                                             <option value="<?php echo $res['PT_ID']; ?>"><?php echo $res['PT_Name']; ?></option>
