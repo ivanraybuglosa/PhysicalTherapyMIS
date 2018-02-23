@@ -75,9 +75,9 @@
                                                         <tr>
                                                             <td><?php echo $row['name']?></td>
                                                             <td><?php echo $row['username']?></td>
-                                                            <td><?php echo $row['password']?></td>
+                                                            <td><?php echo MD5($row['password'])?></td>
                                                             <td><?php echo $row['userType']?></td>
-                                                            <td><a href="userEdit.php?id=<?php echo $row['userID'];?>" class="waves-effect waves-light btn">Edit</a></td>
+                                                            <td><a href="userEdit.php?id=<?php echo $row['userID'];?>" class="waves-effect waves-light btn">Update</a></td>
                                                               <?php }?>
                                                         </tr>
 

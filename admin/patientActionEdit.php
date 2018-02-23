@@ -19,7 +19,7 @@
 	mysqli_query($mysqli, "UPDATE patient set PatientName='$patientName', PatientBirthdate='$patientBday', PatientGender='$patientGender',
 	PatientAddress='$patientAddress', PatientCivilStatus='$patientCivilStatus', PatientProfession='$patientProfession' ,PatientDoctor='$patientDoctor',PatientHospital='$patientHospital',PatientReferralAddress='$patientHospitalAddress',PatientTelephone='$patientTelephone',PatientContactPerson='$patientContactPerson',PatientCases='$patientCases'
 	where PatientID='$patientID'" );
-		echo "<script>alert('Patient Record Updated Successfully');window.location.href='patient.php';</script>";
+		echo "<script>alert('Patient Record Updated Successfully');window.location.href='patientEdit.php?patient_id=$patientID';</script>";
 
 }
 ?>

@@ -115,11 +115,11 @@
                                     <ul>
                                         <li><a href="dateReport.php">Patient Transaction</a>
                                         </li>
-                                        <li><a href="statementReport.php">Patient Bill</a>
+                                        <li><a href="PatientListReport.php">Patient List</a>
                                         </li>
                                          <li><a href="#" onclick="openCases()">Trend - Cases</a>
                                         </li>
-                                        <li><a href="HistoryIllness.php">Trend - History Illness</a>
+                                        <li><a href="#" onclick="openIllness()">Trend - History Illness</a>
                                         </li>
                                         <li><a href="#" onclick="openPatient()">Trend - Patient</a>
                                         </li>
@@ -147,6 +147,9 @@
             </aside>
 
             <script>
+            function openIllness() {
+                myWindow = window.open("historyillness.php", "", "width=1350, height=650");
+            }
             function openCases() {
                 myWindow = window.open("cases.php?year=2018", "", "width=1350, height=650");
             }

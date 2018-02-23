@@ -1,7 +1,7 @@
 <?php include("header.php");
     include("config.php");
 
-    $income = mysqli_query($mysqli, "SELECT DATE_FORMAT(POCSessionDate, '%Y') as 'year', DATE_FORMAT(POCSessionDate, '%m') as 'month',DATE_FORMAT(POCSessionDate, '%d') as 'day',SUM(POCTreatmentBill) as 'total' FROM planofcare WHERE POCStatus = 'paid' AND MONTH(POCSessionDate) = MONTH(CURRENT_DATE()) AND YEAR(POCSessionDate) = YEAR(CURRENT_DATE()) AND DAY(POCSessionDate) < DAY(CURRENT_DATE()) GROUP BY DATE_FORMAT(POCSessionDate, '%Y%m%d')");
+    $income = mysqli_query($mysqli, "SELECT DATE_FORMAT(POCSessionDate, '%Y') as 'year', DATE_FORMAT(POCSessionDate, '%m') as 'month',DATE_FORMAT(POCSessionDate, '%d') as 'day',SUM(POCTreatmentBill) as 'total' FROM planofcare WHERE MONTH(POCSessionDate) = MONTH(CURRENT_DATE()) AND YEAR(POCSessionDate) = YEAR(CURRENT_DATE()) AND DAY(POCSessionDate) < DAY(CURRENT_DATE()) GROUP BY DATE_FORMAT(POCSessionDate, '%Y%m%d')");
     $incomeRes = mysqli_fetch_array($income);
     $income = $incomeRes['total'];
 

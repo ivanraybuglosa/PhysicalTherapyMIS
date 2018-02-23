@@ -11,12 +11,12 @@ if(isset($_POST['submit'])) {
 		if ($selected == "Anemia"){mysqli_query($mysqli, "UPDATE illnesscounter SET Anemia = Anemia + 1");}
 		if ($selected == "Anxiety"){mysqli_query($mysqli, "UPDATE illnesscounter SET Anxiety = Anxiety + 1");}
 		if ($selected == "Asthma"){mysqli_query($mysqli, "UPDATE illnesscounter SET Asthma = Asthma + 1");}
-		if ($selected == "Arthritis-rheumatoid"){mysqli_query($mysqli, "UPDATE illnesscounter SET Arthritis-rheuma = Arthritis-rheuma + 1");}
+		if ($selected == "Arthritis-rheumatoid"){mysqli_query($mysqli, "UPDATE illnesscounter SET ArthritisRheuma = ArthritisRheuma + 1");}
 		if ($selected == "Blood Clot"){mysqli_query($mysqli, "UPDATE illnesscounter SET BloodClot = BloodClot + 1");}
 		if ($selected == "Bronchitis"){mysqli_query($mysqli, "UPDATE illnesscounter SET Bronchitis = Bronchitis + 1");}
 		if ($selected == "Bowel disease"){mysqli_query($mysqli, "UPDATE illnesscounter SET Bowel = Bowel + 1");}
 		if ($selected == "Blood Transfusion"){mysqli_query($mysqli, "UPDATE illnesscounter SET BloodTrans = BloodTrans + 1");}
-		if ($selected == "Arthritis-osteo"){mysqli_query($mysqli, "UPDATE illnesscounter SET Arthritis-osteo = Arthritis-osteo	 + 1");}
+		if ($selected == "Arthritis-osteo"){mysqli_query($mysqli, "UPDATE illnesscounter SET ArthritisOsteo = ArthritisOsteo	 + 1");}
 		if ($selected == "Cancer"){mysqli_query($mysqli, "UPDATE illnesscounter SET Cancer = Cancer + 1");}
 		if ($selected == "Cardiac Arrythmia"){mysqli_query($mysqli, "UPDATE illnesscounter SET Cardiac = Cardiac + 1");}
 		if ($selected == "Congestive Heart Failure"){mysqli_query($mysqli, "UPDATE illnesscounter SET Congestive = Congestive + 1");}

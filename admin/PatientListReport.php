@@ -4,7 +4,7 @@
 <section class="section">
   <div class="container">
             <div class="card-panel">
-              <h4 class="header2">Statement of Account</h4>
+              <h4 class="header2">Patient Master List</h4>
               <div class="divider"></div>
                 <div class="container">
                     <div class="section">
@@ -17,9 +17,12 @@
                               <thead>
                                   <tr>
                                       <th>Patient</th>
-                                      <th>Physical Therapy</th>
-                                      <th>Date</th>
-                                      <th>Amount</th>
+                                      <th>Birthday</th>
+                                      <th>Gender</th>
+                                      <th>Address</th>
+                                      <th>Civil Status</th>
+                                      <th>Profession</th>
+                                      <th>Actions</th>
 
                                   </tr>
                               </thead>
@@ -28,15 +31,18 @@
                               <?php include_once("config.php");
 
 
-                          $result = mysqli_query($mysqli, "SELECT * FROM planofcare INNER JOIN patient ON planofcare.PatientID = patient.PatientID INNER JOIN pt ON planofcare.PT_ID = pt.PT_ID ORDER BY POCID DESC");
+                          $result = mysqli_query($mysqli, "SELECT * FROM patient ORDER BY PatientID DESC");
                           while ($res = mysqli_fetch_array($result)) {
                           $patientID = $res['PatientID'];
                           ?><tr>
                               <td><?php echo $res['PatientName']; ?></td>
-                              <td><?php echo $res['PT_Name']; ?></td>
-                              <td><?php echo $res['POCSessionDate']; ?></td>
-                              <td><?php echo $res['POCTreatmentBill']; ?></td>
-                              
+                              <td><?php echo $res['PatientBirthdate']; ?></td>
+                              <td><?php echo $res['PatientGender']; ?></td>
+                              <td><?php echo $res['PatientAddress']; ?></td>
+                              <td><?php echo $res['PatientCivilStatus']; ?></td>
+                              <td><?php echo $res['PatientProfession']; ?></td>
+                              <td><a href="printPatient.php?id=<?php echo $res['PatientID']; ?>" class="btn green waves-effect waves-light " target="_blank">Print</a></td>
+
                               </tr>
 
                           <?php  } ?>

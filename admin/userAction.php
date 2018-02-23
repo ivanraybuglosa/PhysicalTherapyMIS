@@ -12,9 +12,9 @@ if(isset($_POST['Submit'])) {
 		// if all the fields are filled (not empty)
 
 		//insert data to database
-		$result = mysqli_query($mysqli, "INSERT INTO users(name, username, password, userType) VALUES('$name','$username',MD5('$password'),'$position')");
+		$result = mysqli_query($mysqli, "INSERT INTO users(name, username, password, userType) VALUES('$name','$username','$password','$position')");
 		//display success message
 		echo "<script>alert('User Information Successfully saved!');window.location.href='user.php';</script>";
-		
+
 	}
 ?>
