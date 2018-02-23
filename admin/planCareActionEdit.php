@@ -23,9 +23,9 @@ if(isset($_POST['Submit'])) {
 
 		$result = mysqli_query($mysqli,
 
-			"UPDATE planofcare SET PatientID = '$PatientID', POCPT = '$PTName',POCSessionDate = '$sessionDate',POCTreatment = '$Treatment', POCBloodPressure = '$bloodPressure', POCHeartRate ='$heartRate' , POCRespiratoryRate = '$respiratoryRate', POCPulse = '$pulse', POCAssessment = '$assessment', POCPlan = '$plan', POCNextSchedDate ='$nextSchedDate1' , POCTreatmentBill = '$billing', POCTime = '$time', POCStatus = 'Unpaid', POC_Subjective = '$subjective' WHERE POCID = '$id'");
-		echo "<script>alert('Plan of Care Updated Successfully');window.location.href=;</script>";
+			"UPDATE planofcare SET PatientID = '$PatientID', PT_ID = '$PTName',POCSessionDate = '$sessionDate',POCTreatment = '$Treatment', POCBloodPressure = '$bloodPressure', POCHeartRate ='$heartRate' , POCRespiratoryRate = '$respiratoryRate', POCPulse = '$pulse', POCAssessment = '$assessment', POCPlan = '$plan', POCNextSchedDate ='$nextSchedDate1' , POCTreatmentBill = '$billing', POCTime = '$time', POCStatus = 'Unpaid', POC_Subjective = '$subjective' WHERE POCID = '$id'");
+		echo "<script>alert('Plan of Care Updated Successfully');window.location.href='manageplancare.php';</script>";
 	}
 ?>
 <!--
-manageplancare.php -->
+ -->

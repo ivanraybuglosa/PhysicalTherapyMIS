@@ -42,12 +42,22 @@
                                         <select id="PTName" name="PTName">
                                             <option value="" disabled selected>Choose Physical Therapist</option>
                                             <?php include("config.php");
-                                                  $id = $_GET['id'];
+                                                  $patient = $erow['PatientID'];
+                                                  $result = mysqli_query($mysqli, "SELECT PT_ID FROM planofcare WHERE PatientID = '$patient'");
+                                                  while ($res1 = mysqli_fetch_array($result)) { ?>
+                                            <?php include("config.php");
+
                                                     $result = mysqli_query($mysqli, "SELECT * FROM pt");
                                                     while ($res = mysqli_fetch_array($result)) { ?>
 
-                                            <option value="<?php echo $res['PT_ID']; ?>"><?php echo $res['PT_Name']; ?></option>
-                                            <?php } ?>
+
+                                            <option value="<?php echo $res['PT_ID']; ?>"
+                                              <?php if($res1['PT_ID'] == $res['PT_ID']){
+                                                echo "selected";
+                                                    }
+                                              ?>>
+                                              <?php echo $res['PT_Name']; ?></option>
+                                          <?php }}?>
                                         </select>
                                     </div>
                                     <div class="input-field col s12">

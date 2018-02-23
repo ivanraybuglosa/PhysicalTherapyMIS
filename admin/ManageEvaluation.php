@@ -49,7 +49,7 @@
                                                 <?php $result1 = mysqli_query($mysqli, "SELECT * FROM patient WHERE PatientID = '$patientID'");
                                                 while ($res1 = mysqli_fetch_array($result1)) { ?>
                                                     <td><?php echo $res1['PatientName']; ?></td>
-                                                    <td><?php echo $res['EvalPT']; ?></td>
+                                                    <td><?php echo $res['PT_ID']; ?></td>
                                                     <td><?php echo $res['EvalChiefComplaint']; ?></td>
                                                     <td><?php echo $res['EvalHistoryIllness']; ?></td>
                                                     <td><a class="waves-effect waves-light modal-trigger light-blue btn" href="editEval.php?id=<?php echo $res['EvalID']; ?>" >Update</a>

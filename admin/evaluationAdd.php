@@ -17,8 +17,8 @@
                   </div>
                 </div>
                 <!--breadcrumbs end-->
-                
-                <?php include("config.php"); 
+
+                <?php include("config.php");
                     $patientID = $_GET['Patient_ID'];
                      $edit=mysqli_query($mysqli,"select * from patient where PatientID='$patientID'");
                     $erow=mysqli_fetch_array($edit);
@@ -40,8 +40,8 @@
                                             <?php include("config.php");
                                                     $result = mysqli_query($mysqli, "SELECT * FROM PT ORDER BY PT_ID DESC");
                                                     while ($res = mysqli_fetch_array($result)) { ?>
-                                            
-                                            <option value="<?php echo $res['PT_Name']; ?>"><?php echo $res['PT_Name']; ?></option>
+
+                                            <option value="<?php echo $res['PT_ID']; ?>"><?php echo $res['PT_Name']; ?></option>
                                             <?php } ?>
                                         </select>
                                     </div>
@@ -54,7 +54,7 @@
                                                 <textarea name="ChiefComplaint" class="materialize-textarea" required></textarea>
                                             <label for="ChiefComplaint">Complaint</label>
                                             </div>
-                                        </div>                                            
+                                        </div>
                                     </div>
                 </div>
                                 <div class="card-panel">
@@ -357,54 +357,54 @@
                                     <div class="divider"></div>
                                     <div class="input-field col s6">
                                         <textarea name="ROM" class="materialize-textarea"  required></textarea>
-                                    </div>      
+                                    </div>
                             </div>
                             <div class="card-panel">
                                 <h4 class="header">Manual Muscle Test</h4>
                                     <div class="divider"></div>
                                     <div class="input-field col s6">
                                         <textarea name="MMT" class="materialize-textarea"  required></textarea>
-                                    </div>      
+                                    </div>
                             </div>
                             <div class="card-panel">
                                 <h4 class="header">Assessment</h4>
                                     <div class="divider"></div>
                                     <div class="input-field col s6">
                                         <textarea name="Assessment" class="materialize-textarea"  required></textarea>
-                                    </div>      
+                                    </div>
                             </div>
                             <div class="card-panel">
                                 <h4 class="header">Plan</h4>
                                     <div class="divider"></div>
                                     <div class="input-field col s6">
                                         <textarea name="Plan" class="materialize-textarea"  required></textarea>
-                                    </div>      
+                                    </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <a href="addTrans.php" class="btn red waves-effect waves-light right" style="margin-right:20px;">Cancel<i class="mdi-content-send right"></i></a>
                                     <button class="btn cyan waves-effect waves-light right" type="submit" name="submit" style="margin-right:20px;">Save<i class="mdi-content-send right"></i></button>
                                 </div>
-                            </div>      
+                            </div>
                     </div>
                 </form>
             </div>
         </section>
-    
+
     <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="js/clock.js"></script>
-    <script type="text/javascript" src="js/date.js"></script>      
+    <script type="text/javascript" src="js/date.js"></script>
     <!--materialize js-->
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <!--scrollbar-->
     <script type="text/javascript" src="js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-     
+
     <!-- chartist -->
-    <script type="text/javascript" src="js/plugins/chartist-js/chartist.min.js"></script> 
+    <script type="text/javascript" src="js/plugins/chartist-js/chartist.min.js"></script>
 
     <!-- datatables -->
     <script type="text/javascript" src="js/plugins/data-tables/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="js/plugins/data-tables/data-tables-script.js"></script>    
+    <script type="text/javascript" src="js/plugins/data-tables/data-tables-script.js"></script>
 
     <!-- chartjs -->
     <script type="text/javascript" src="js/plugins/chartjs/chart.min.js"></script>
@@ -413,16 +413,16 @@
     <!-- sparkline -->
     <script type="text/javascript" src="js/plugins/sparkline/jquery.sparkline.min.js"></script>
     <script type="text/javascript" src="js/plugins/sparkline/sparkline-script.js"></script>
-    
+
     <!--jvectormap-->
     <script type="text/javascript" src="js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
     <script type="text/javascript" src="js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
     <script type="text/javascript" src="js/plugins/jvectormap/vectormap-script.js"></script>
-    
+
     <!--plugins.js - Some Specific JS codes for Plugin Settings-->
     <script type="text/javascript" src="js/plugins.js"></script>
     <!-- Toast Notification -->
-    
+
 </body>
 
 </html>
