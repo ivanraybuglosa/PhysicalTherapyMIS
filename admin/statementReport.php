@@ -16,7 +16,7 @@
                                           <table id="data-table-simple" class="responsive-table display" cellspacing="0">
                               <thead>
                                   <tr>
-                                      <th>Client Name</th>
+                                      <th>Patient</th>
                                       <th>Physical Therapy</th>
                                       <th>Date</th>
                                       <th>Amount</th>
@@ -25,7 +25,7 @@
                               </thead>
                               <tbody>
 
-                              <?php include_once("config.php"); 
+                              <?php include_once("config.php");
 
 
                           $result = mysqli_query($mysqli, "SELECT * FROM planofcare INNER JOIN patient ON planofcare.PatientID = patient.PatientID INNER JOIN pt ON planofcare.PT_ID = pt.PT_ID ORDER BY POCID DESC");

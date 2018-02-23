@@ -29,7 +29,7 @@
                 <div class="card-panel">
                     <h4 class="header2">OUTGOING REFERRAL FORM</h4>
                         <div class="row">
-                            <form class="col s12" method="post" action="referralActionAdd.php">
+                            <form class="col s12" method="post" action="referralActionEdit.php">
                                 <div class="row">
                                     <div class="input-field col s6">
                                         <input type="hidden" name="refid" value="<?php echo $erow['RefID']; ?>">
